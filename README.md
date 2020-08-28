@@ -1,6 +1,6 @@
 # QCM React
 
-![template](/public/images/qcm.png)
+![template](/public/images/qcm.PNG)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
