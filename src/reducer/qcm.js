@@ -10,11 +10,11 @@ export const initialState = {
     score: 0,
     response: 0,
     message: '',
-    feedbacks : [],
+    feedbacks: [],
 
     //login
     email: '',
-    password: '', 
+    password: '',
     auth: false
 };
 
@@ -32,13 +32,13 @@ export const reducer = (state, action) => {
             return { ...state, response: Number(action.response), message: "" }
 
         case 'SUBMIT':
-            if(state.response === "")
-                return { ...state, message: "Veuillez séléctionner une réponse"}
+            if (state.response === "")
+                return { ...state, message: "Veuillez séléctionner une réponse" }
 
-            if(state.response === action.response) 
-                return { ...state, score: state.score + 1, position: state.position + 1, response: 0, feedbacks: [...state.feedbacks, "Q" + (state.position + 1) + " : Bravo ! " + state.question.feedback]}
-            else 
-                return { ...state, position: state.position + 1, response: 0, feedbacks: [...state.feedbacks, "Q" + (state.position + 1) + " : Dommage ce n'est pas juste. " + state.question.feedback]}
+            if (state.response === action.response)
+                return { ...state, score: state.score + 1, position: state.position + 1, response: 0, feedbacks: [...state.feedbacks, "Q" + (state.position + 1) + " : Bravo ! " + state.question.feedback] }
+            else
+                return { ...state, position: state.position + 1, response: 0, feedbacks: [...state.feedbacks, "Q" + (state.position + 1) + " : Dommage ce n'est pas juste. " + state.question.feedback] }
 
         case 'EMAIL':
             return { ...state, email: action.email }
@@ -57,6 +57,7 @@ export const reducer = (state, action) => {
             } else {
                 return { ...state, message: "Votre identifiant ou password n'est pas valide" }
             }
+
 
         default:
             return state;
